@@ -1,0 +1,38 @@
+magic = int(input())
+
+
+def factor(numbers):
+    num_list = []
+
+    for i in range(1, numbers + 1):
+        if numbers % i == 0:
+            num_list.append(i)
+    return num_list
+
+
+def prime(factors_list):
+    primes = []
+    factors_list.pop(0)
+    for i in factors_list:
+        primeNum = True
+        for num in range(2, i):
+            if i % num == 0:
+                primeNum = False
+        if primeNum:
+            primes.append(i)
+    if len(primes) >= 3:
+        return True
+    else:
+        return False
+
+
+
+magicNumbers = []
+for x in range(1, 10000):
+    temp = factor(x)
+    primes = prime(temp)
+    if primes:
+        magicNumbers.append(x)
+
+for n in range(0, magic):
+    print(magicNumbers[n])

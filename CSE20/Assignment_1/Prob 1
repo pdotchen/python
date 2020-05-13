@@ -1,0 +1,6 @@
+a = float(input())
+b = float(input())
+c = float(input())
+
+avg = (c/b * a)
+print(round(avg, 2))

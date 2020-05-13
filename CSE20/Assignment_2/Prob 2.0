@@ -1,0 +1,41 @@
+my_string = str(input())
+my_string.split()
+
+
+def punctuation(string):
+    for p in string[:-1]:
+        if p == "." or p == "?" or p == ",":
+            return False
+    if string[-1] == "." or string[-1] == "?" or string[-1] == ",":
+        if not string.isalpha():
+            return False
+        return True
+    return False
+
+
+def palindrome(string):
+    string = string.lower()
+    if not string.isalpha():
+        return False
+    flip = ""
+    i = len(string) - 1
+    while i >= 0:
+        flip += string[i]
+        i -= 1
+    if flip == string:
+        return True
+    return False
+
+
+def zero(num):
+    if num.isdigit():
+        num = int(num)
+    else:
+        return True
+    if num[0] == 0:
+        return True
+    elif num >= 0:
+        return True
+    return False
+
+

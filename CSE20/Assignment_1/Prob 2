@@ -1,0 +1,22 @@
+num = int(input())
+
+if num < 10 and num > 0:
+    num *= 100
+    print(num)
+elif num % 10 == 0 and num < 100:
+    num //= 10
+    print(num * 100)
+elif num % 10 == 0 and num < 1000 and num > 100:
+    num1 = num % 100
+    num2 = num // 100
+    print ((num1 * 10) + (num2 * 10))
+elif num < 100 and num > 10:
+    num1 = num % 10
+    num2 = num // 10
+    num = (num1 * 10) + num2
+    print(num * 10)
+elif num < 1000 and num > 100:
+    num1 = num % 10
+    num2 = num % 100 // 10
+    num3 = num // 100
+    print((num1 * 100) + (num2 * 10) + num3)
